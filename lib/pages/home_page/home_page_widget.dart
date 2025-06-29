@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
-import 'package:image_project_library_59n21v/custom_code/widgets/index.dart'
-    as image_project_library_59n21v_custom_widgets;
+import 'package:image_cropper_library_llrw5e/custom_code/actions/index.dart'
+    as image_cropper_library_llrw5e_actions;
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -76,17 +76,17 @@ class _HomePageWidgetState extends State<HomePageWidget> {
           top: true,
           child: Column(
             mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Container(
-                width: double.infinity,
-                height: 600.0,
-                child: image_project_library_59n21v_custom_widgets.ImageCropper(
-                  width: double.infinity,
-                  height: 600.0,
-                  nextPage: 'test',
-                  nextPageParameterName: 'test',
-                  imageData: _model.uploadedLocalFile_uploadData,
-                  loadImage: () async {},
+              ClipRRect(
+                borderRadius: BorderRadius.circular(8.0),
+                child: Image.memory(
+                  _model.uploadedLocalFile_uploadData.bytes ??
+                      Uint8List.fromList([]),
+                  width: 200.0,
+                  height: 200.0,
+                  fit: BoxFit.cover,
                 ),
               ),
               FFButtonWidget(
@@ -125,6 +125,15 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       return;
                     }
                   }
+
+                  _model.upImage =
+                      await image_cropper_library_llrw5e_actions.cropImage(
+                    context,
+                    100.0,
+                    150.0,
+                  );
+
+                  safeSetState(() {});
                 },
                 text: 'Button',
                 options: FFButtonOptions(

@@ -9,6 +9,9 @@ class HomePageModel extends FlutterFlowModel<HomePageWidget> {
   FFUploadedFile uploadedLocalFile_uploadData =
       FFUploadedFile(bytes: Uint8List.fromList([]));
 
+  // Stores action output result for [Custom Action - cropImage] action in Button widget.
+  FFUploadedFile? upImage;
+
   @override
   void initState(BuildContext context) {}
 

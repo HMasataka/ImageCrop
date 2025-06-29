@@ -6,8 +6,8 @@ import 'package:provider/provider.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
 import '/index.dart';
-import 'package:image_project_library_59n21v/index.dart'
-    as $image_project_library_59n21v;
+import 'package:image_cropper_library_llrw5e/index.dart'
+    as $image_cropper_library_llrw5e;
 
 export 'package:go_router/go_router.dart';
 export 'serialization_util.dart';
@@ -31,9 +31,9 @@ class AppStateNotifier extends ChangeNotifier {
 }
 
 GoRouter createRouter(AppStateNotifier appStateNotifier) {
-  $image_project_library_59n21v.initializeRoutes(
-    homePageWidgetName: 'image_project_library_59n21v.HomePage',
-    homePageWidgetPath: '/homePage_image-project-library-59n21v',
+  $image_cropper_library_llrw5e.initializeRoutes(
+    homePageWidgetName: 'image_cropper_library_llrw5e.HomePage',
+    homePageWidgetPath: '/homePage_image-cropper-library-llrw5e',
   );
 
   return GoRouter(
@@ -54,10 +54,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) {
         builder: (context, params) => HomePageWidget(),
       ),
       FFRoute(
-        name: $image_project_library_59n21v.HomePageWidget.routeName,
-        path: $image_project_library_59n21v.HomePageWidget.routePath,
+        name: $image_cropper_library_llrw5e.HomePageWidget.routeName,
+        path: $image_cropper_library_llrw5e.HomePageWidget.routePath,
         builder: (context, params) =>
-            $image_project_library_59n21v.HomePageWidget(),
+            $image_cropper_library_llrw5e.HomePageWidget(),
       )
     ].map((r) => r.toRoute(appStateNotifier)).toList(),
   );

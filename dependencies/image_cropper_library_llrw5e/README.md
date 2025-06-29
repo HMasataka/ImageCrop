@@ -1,4 +1,4 @@
-# image-project-library
+# image-cropper-library
 
 A new Flutter project.
 
